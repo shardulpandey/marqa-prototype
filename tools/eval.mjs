@@ -14,7 +14,7 @@ const send = (method, params = {}) => new Promise(r => { const id = ++seq; pend.
 const mob = process.argv[4] === 'mobile';
 await send('Emulation.setDeviceMetricsOverride', mob ? { width: 390, height: 844, deviceScaleFactor: 1, mobile: true } : { width: 1440, height: 900, deviceScaleFactor: 1, mobile: false });
 await send('Page.enable'); await send('Page.addScriptToEvaluateOnNewDocument', { source: "try{sessionStorage.setItem('mq-install-dismissed','1')}catch(_){}" });
-await send('Page.navigate', { url: 'http://localhost:8834/?e=' + Date.now() + process.argv[2] }); await sleep(1400);
+await send('Page.navigate', { url: (process.env.BASE || 'http://localhost:8834/') + '?e=' + Date.now() + process.argv[2] }); await sleep(1400);
 const r = await send('Runtime.evaluate', { expression: process.argv[3], awaitPromise: true, returnByValue: true });
 console.log(JSON.stringify(r.result.exceptionDetails ? r.result.exceptionDetails.exception.description : r.result.result.value, null, 1));
 ws.close(); chrome.kill(); await sleep(200); try { rmSync(prof, { recursive: true, force: true }); } catch (_) {}
