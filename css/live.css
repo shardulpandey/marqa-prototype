@@ -1,0 +1,14 @@
+/* Shared pieces for the live-app screens (deal record, pipeline, demand, stock, settings, data). */
+.spill { display: inline-flex; align-items: center; height: 22px; padding: 0 9px; border-radius: 99px; font-size: 11.5px; font-weight: 600; white-space: nowrap; }
+.spill.lead { background: var(--blue-bg); color: var(--blue); }
+.spill.quote { background: var(--gold-lt); color: var(--gold-dk); }
+.spill.order { background: var(--green-bg); color: var(--green); }
+.spill.closed { background: #EFEBE4; color: var(--ink-2); }
+.spill.lost { background: var(--red-bg); color: var(--red); }
+.side .foot .who { display: flex; align-items: center; gap: 10px; background: none; border: 0; color: inherit; text-align: left; flex: 1; min-width: 0; padding: 0; cursor: pointer; font: inherit; }
+.side .foot .vrole { display: block; font-size: 11px; color: var(--gold); font-weight: 600; }
+.side .foot .who:hover .vrole { text-decoration: underline; }
+.mono { font-family: ui-monospace, 'SFMono-Regular', Consolas, monospace; font-size: 12px; }
+.tint { background: var(--gold-wash) !important; }
+.req::after { content: ' *'; color: var(--red); }
+.notinlist { color: var(--amber); font-size: 11px; }

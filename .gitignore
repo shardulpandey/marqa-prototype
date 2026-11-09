@@ -1,0 +1,4 @@
+_shots/
+_retired/
+node_modules/
+*.log

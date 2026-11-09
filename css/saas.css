@@ -1,0 +1,37 @@
+/* Inbox, campaigns, store, studio, portal, billing, schemes, karigars, assistant (the SaaS screens) */
+.sx-tile { width: 34px; height: 34px; padding: 0; justify-content: center; border-radius: 10px; flex: none; }
+.sx-deal { display: block; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); padding: 12px; cursor: pointer; }
+.sx-deal:hover { box-shadow: var(--sh-1); }
+.sx-deal + .sx-deal { margin-top: 8px; }
+.sx-dealbar { display: none; align-items: center; gap: 8px; padding: 8px 14px; border-bottom: 1px solid var(--line); background: var(--surface-2); font-size: 12.5px; min-width: 0; }
+.sx-dealbar .grow { min-width: 0; }
+@media (max-width: 1240px) { .sx-dealbar { display: flex; } }
+.sx-gal { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 8px; }
+.sx-gal img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 10px; cursor: pointer; border: 1px solid var(--line-2); }
+.sx-tpl { border: 1px solid var(--line); border-radius: 12px; padding: 12px; background: var(--surface); }
+.sx-tpl + .sx-tpl { margin-top: 8px; }
+.sx-tpl .b { font-size: 12.5px; color: var(--ink-2); white-space: pre-line; margin-top: 6px; max-height: 5.6em; overflow: hidden; }
+.sx-doc { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 18px; font-size: 13px; }
+.sx-doc table { width: 100%; border-collapse: collapse; margin-top: 12px; }
+.sx-doc th, .sx-doc td { text-align: left; padding: 7px 4px; border-bottom: 1px solid var(--line-2); vertical-align: top; }
+.sx-doc th { font-size: 11px; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); font-weight: 600; }
+.sx-doc .r { text-align: right; }
+.sx-stages { display: flex; flex-wrap: wrap; gap: 6px; }
+.sx-team { display: grid; grid-template-columns: minmax(0,1.2fr) minmax(0,1fr) 160px 36px; gap: 8px; align-items: center; }
+@media (max-width: 600px) { .sx-team { grid-template-columns: minmax(0,1fr) minmax(0,1fr) 36px; padding-bottom: 8px; border-bottom: 1px solid var(--line-2); } .sx-team select { grid-column: 1 / 3; grid-row: 2; } .sx-team .icon-btn { grid-column: 3; grid-row: 1; } }
+.sx-cart .li { padding: 12px 0; cursor: default; }
+.sx-hits { border: 1px solid var(--line); border-radius: 10px; margin-top: 8px; overflow: hidden; }
+.sx-hits .li { padding: 10px 12px; }
+.sx-off { opacity: .55; }
+.sx-off.li { cursor: not-allowed; }
+.sx-read .li { opacity: .62; }
+.sx-pv { position: relative; }
+.sx-pv .chip { cursor: pointer; }
+.sx-modal-b { padding: 22px; max-height: 86vh; overflow-y: auto; }
+.modal.wide { width: min(720px, calc(100vw - 32px)); top: 6vh; }
+.inbox { grid-template-rows: minmax(0, 1fr); }
+.inbox .conv, .inbox .threads, .inbox .ctx { min-height: 0; }
+.sugg button.on { border-color: var(--gold); color: var(--gold-dk); background: var(--gold-wash); }
+@media (min-width: 901px) { .inbox { height: calc(100vh - var(--top) - 150px); min-height: 520px; } }
+@media (max-width: 900px) { body:has(.inbox.in-thread) .fab { display: none; } .inbox .ai-sugg .sugg { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; } .inbox .ai-sugg .sugg button { flex: none; } }
+@media (max-width: 900px) { .modal.wide { width: 100vw; top: auto; } .sx-modal-b { padding: 18px 16px calc(18px + var(--safe-b)); } .sx-gal { grid-template-columns: repeat(2, minmax(0,1fr)); } .sx-doc { padding: 14px; } }
